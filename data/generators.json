@@ -1,0 +1,7 @@
+[
+  {
+    "name": "Farmer",
+    "base_cost": { "food": 10 },
+    "production": { "food": 1 }
+  }
+]

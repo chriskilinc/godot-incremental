@@ -1,0 +1,29 @@
+[gd_scene load_steps=2 format=3 uid="uid://crxiasooauxux"]
+
+[ext_resource type="Script" uid="uid://37t3tcoq635a" path="res://scripts/Main.cs" id="1_ig7tw"]
+
+[node name="main" type="Node2D"]
+script = ExtResource("1_ig7tw")
+
+[node name="UI" type="Control" parent="."]
+unique_name_in_owner = true
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="MarginContainer" type="MarginContainer" parent="UI"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="HBoxContainer" type="VBoxContainer" parent="UI/MarginContainer"]
+layout_mode = 2
+
+[node name="FoodLabel" type="Label" parent="UI/MarginContainer/HBoxContainer"]
+layout_mode = 2
+text = "Food:"
+
+[node name="ClickButton" type="Button" parent="UI/MarginContainer/HBoxContainer"]
+layout_mode = 2
+text = "Click me"
