@@ -1,0 +1,187 @@
+[gd_scene load_steps=9 format=3 uid="uid://bj24kou1i6gqt"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_tmptv"]
+bg_color = Color(0.15686275, 0.15686275, 0.15686275, 1)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_tmptv"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_tmptv"]
+font_size = 8
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_4g44v"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_1df28"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_px6ft"]
+bg_color = Color(0.38911965, 0.68703276, 0.2957766, 1)
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+anti_aliasing = false
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_mmiqc"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_4g44v"]
+content_margin_left = 2.0
+content_margin_top = 2.0
+content_margin_right = 2.0
+content_margin_bottom = 2.0
+bg_color = Color(0.23753911, 0.23753914, 0.23753911, 1)
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+anti_aliasing = false
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.15686275, 0.15686275, 0.15686275, 1)
+
+[node name="Panel" type="PanelContainer" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -179.0
+offset_top = -75.0
+offset_right = 179.0
+offset_bottom = 75.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_tmptv")
+
+[node name="MarginContainer" type="MarginContainer" parent="Panel"]
+layout_mode = 2
+theme_override_constants/margin_left = 15
+theme_override_constants/margin_top = 15
+theme_override_constants/margin_right = 15
+theme_override_constants/margin_bottom = 15
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Panel/MarginContainer"]
+layout_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Panel/MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 0
+
+[node name="Label" type="Label" parent="Panel/MarginContainer/VBoxContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 0
+text = "Very important metrics"
+
+[node name="Label2" type="Label" parent="Panel/MarginContainer/VBoxContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 0
+theme_override_colors/font_color = Color(0.6872149, 0.68721503, 0.6872149, 1)
+theme_override_font_sizes/font_size = 12
+text = "foo bar"
+
+[node name="HSeparator" type="HSeparator" parent="Panel/MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 12
+theme_override_styles/separator = SubResource("StyleBoxEmpty_tmptv")
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="Panel/MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 2
+
+[node name="MetricHBox" type="HBoxContainer" parent="Panel/MarginContainer/VBoxContainer/VBoxContainer2"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="Panel/MarginContainer/VBoxContainer/VBoxContainer2/MetricHBox"]
+layout_mode = 2
+text = "Metric 1"
+label_settings = SubResource("LabelSettings_tmptv")
+
+[node name="VSeparator" type="VSeparator" parent="Panel/MarginContainer/VBoxContainer/VBoxContainer2/MetricHBox"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_styles/separator = SubResource("StyleBoxEmpty_4g44v")
+
+[node name="ProgressBar" type="ProgressBar" parent="Panel/MarginContainer/VBoxContainer/VBoxContainer2/MetricHBox"]
+custom_minimum_size = Vector2(0, 4)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 4
+size_flags_stretch_ratio = 2.0
+theme_override_styles/background = SubResource("StyleBoxEmpty_1df28")
+theme_override_styles/fill = SubResource("StyleBoxFlat_px6ft")
+value = 69.0
+fill_mode = 1
+show_percentage = false
+
+[node name="Label2" type="Label" parent="Panel/MarginContainer/VBoxContainer/VBoxContainer2/MetricHBox"]
+custom_minimum_size = Vector2(25, 0)
+layout_mode = 2
+text = "69%"
+label_settings = SubResource("LabelSettings_tmptv")
+horizontal_alignment = 2
+
+[node name="MetricHBox2" type="HBoxContainer" parent="Panel/MarginContainer/VBoxContainer/VBoxContainer2"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="Panel/MarginContainer/VBoxContainer/VBoxContainer2/MetricHBox2"]
+layout_mode = 2
+text = "Metric 2"
+label_settings = SubResource("LabelSettings_tmptv")
+
+[node name="VSeparator" type="VSeparator" parent="Panel/MarginContainer/VBoxContainer/VBoxContainer2/MetricHBox2"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_styles/separator = SubResource("StyleBoxEmpty_mmiqc")
+
+[node name="ProgressBar" type="ProgressBar" parent="Panel/MarginContainer/VBoxContainer/VBoxContainer2/MetricHBox2"]
+custom_minimum_size = Vector2(0, 4)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 4
+size_flags_stretch_ratio = 2.0
+theme_override_styles/background = SubResource("StyleBoxEmpty_1df28")
+theme_override_styles/fill = SubResource("StyleBoxFlat_px6ft")
+value = 42.0
+fill_mode = 1
+show_percentage = false
+
+[node name="Label2" type="Label" parent="Panel/MarginContainer/VBoxContainer/VBoxContainer2/MetricHBox2"]
+custom_minimum_size = Vector2(25, 0)
+layout_mode = 2
+text = "42%"
+label_settings = SubResource("LabelSettings_tmptv")
+horizontal_alignment = 2
+
+[node name="HSeparator2" type="HSeparator" parent="Panel/MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 12
+theme_override_styles/separator = SubResource("StyleBoxEmpty_tmptv")
+
+[node name="Button" type="Button" parent="Panel/MarginContainer/VBoxContainer"]
+custom_minimum_size = Vector2(55, 0)
+layout_mode = 2
+size_flags_horizontal = 0
+theme_override_font_sizes/font_size = 8
+theme_override_styles/normal = SubResource("StyleBoxFlat_4g44v")
+text = "Details"
